@@ -2,8 +2,9 @@ import { React, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import "./Register_login.css";
 import axios from "axios";
-import toast from 'react-hot-toast';
-
+import toast from "react-hot-toast";
+// import SuccessToast from "../../components/Toast/SuccessToast";
+// import ErrorToast from "../../components/Toast/ErrorToast";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   // States to store data
@@ -13,6 +14,8 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const navigate = useNavigate();
+  // const [showSuccessToast, setShowSuccessToast] = useState(false);
+
   // / form function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,16 +29,15 @@ const Register = () => {
       });
       if (res && res.data.success) {
         toast.success(res.data.message);
+        // setShowSuccessToast(true);
         navigate("/login");
-        console.log(res)
+        console.log(res);
       } else {
         toast.error(res.data.message);
       }
     } catch (error) {
       console.log(error);
       toast.error("Somthing went Wrong 'catch'");
-
-      
     }
   };
   return (
@@ -58,7 +60,6 @@ const Register = () => {
               <input
                 type="email"
                 className="form-control"
-               
                 placeholder="Enter Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -93,12 +94,24 @@ const Register = () => {
               />
             </div>
 
-            <button type="submit" className="button-85">
-              Submit
-            </button>
+            <div className="button_flex">
+              <button type="submit" className="button-85">
+                Submit
+              </button>
+              <button onClick={(e) => navigate("/login")} class="button-57" role="button">
+                <span class="text">Already Registerd</span>
+                <span>Login</span>
+              </button>
+              
+            </div>
           </form>
         </div>
       </div>
+      {/* <SuccessToast
+        show={showSuccessToast}
+        setShow={setShowSuccessToast}
+        message="Registration successful!"
+      /> */}
     </Layout>
   );
 };

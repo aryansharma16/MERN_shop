@@ -45,30 +45,40 @@ font-family: 'Poppins', sans-serif; */
   border-bottom: solid grey !important;
   position: fixed;
   width: 100%;
+  background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(79, 137, 162) 0%, rgb(11, 11, 11) 100.2%);
 }
 
 .navbar-brand {
-  color: rgb(0, 132, 255);
+  color: rgb(255, 255, 255);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
 
 }
 
 .nav-link {
   font-weight: 300 !important;
+  color: white;
+}
+.nav-link:hover {
+  font-weight: 300 !important;
+  color: rgb(2, 85, 239);
 }
 
+/*  hard code for navbar for its coor and appearance
+ */
 .active {
-  border-bottom: 2px solid black;
-
+  border-bottom: 2px solid rgb(0, 94, 255);
+color: white;
 }
-
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: rgb(0, 92, 252);
+}
 /* Footer */
 
 .Footer {
   color: white;
   padding: 24px;
-  background: radial-gradient(circle at -8.9% 51.2%, rgb(0, 102, 255) 0%, rgb(9, 89, 194) 15.9%, rgb(91, 160, 238) 15.9%, rgb(77, 228, 255) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+  background: radial-gradient(circle at -8.9% 51.2%, rgb(167, 187, 218) 0%, rgb(129, 181, 248) 15.9%, rgb(91, 160, 238) 15.9%, rgb(178, 219, 226) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
   position: static;
 }
 
