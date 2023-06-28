@@ -59,6 +59,10 @@ const CustomStyling = () => {
         <h3 className="home-page__title">Here you can see the changes of css</h3>
         <button className="btn">hello</button>
 
+
+
+
+
         <button className="btn" onClick={() => {
           setDefaultCSS(2);
           
