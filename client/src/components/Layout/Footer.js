@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
+    
     <div className="Footer">
       <h4 className="text-center">All Right Reserved &copy; Aryan Sharma </h4>
       <p className="text-center mt-3">
